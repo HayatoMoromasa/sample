@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    height: 100vh;
+    background: #000;
+    position: relative;
+}
+
+.liquid-images {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 700px;
+    width: 100%;
+    max-width: 700px;
+    filter: saturate(0.5);
+}
