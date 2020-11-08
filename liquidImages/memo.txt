@@ -1,5 +1,0 @@
-thanks for the Libraries and methods
-https://github.com/robin-dela/hover-effect (hover-effect)
-https://cdnjs.com/libraries/gsap/2.1.3 (TweenMax)
-https://cdnjs.com/libraries/three.js (Three.js)
-https://www.granfairs.com/blog/staff/centering-by-css(css-technique)
