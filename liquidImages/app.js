@@ -6,5 +6,5 @@ new hoverEffect({
     angle: Math.PI / 8,
     speedIn: 1.6,
     speedOut: 1.2,
-    displacementImage: './freeze02.jpg'
+    displacementImage: './fluid.jpg'
 });
