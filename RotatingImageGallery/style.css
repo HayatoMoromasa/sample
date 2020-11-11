@@ -32,7 +32,7 @@ body {
 .box-wrapper .text-box {
     width: 600px;
     position: absolute;
-    top: 57%;
+    top: 69%;
     left: 33%;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
@@ -65,7 +65,7 @@ body {
 .circle-box {
     position: relative;
     width: 200px;
-    height: 200px;
+    height: 400px;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     -webkit-animation: animate 20s linear infinite;
@@ -83,23 +83,23 @@ body {
 
 @-webkit-keyframes animate {
     0% {
-        -webkit-transform: perspective(1000px) rotateY(0deg);
-        transform: perspective(1000px) rotateY(0deg);
+        -webkit-transform: perspective(800px) rotateY(0deg);
+        transform: perspective(800px) rotateY(0deg);
     }
     100% {
-        -webkit-transform: perspective(1000px) rotateY(360deg);
-        transform: perspective(1000px) rotateY(360deg);
+        -webkit-transform: perspective(800px) rotateY(360deg);
+        transform: perspective(800px) rotateY(360deg);
     }
 }
 
 @keyframes animate {
     0% {
-        -webkit-transform: perspective(1000px) rotateY(0deg);
-        transform: perspective(1000px) rotateY(0deg);
+        -webkit-transform: perspective(800px) rotateY(0deg);
+        transform: perspective(800px) rotateY(0deg);
     }
     100% {
-        -webkit-transform: perspective(1000px) rotateY(360deg);
-        transform: perspective(1000px) rotateY(360deg);
+        -webkit-transform: perspective(800px) rotateY(360deg);
+        transform: perspective(800px) rotateY(360deg);
     }
 }
 
@@ -136,4 +136,15 @@ body {
 .circle-box .circle-wrap img:hover {
     -webkit-filter: invert(1);
     filter: invert(1);
+}
+
+@media screen and (max-width:480px) {
+    .box-wrapper .text-box {
+        width: 305px;
+        top: 80%;
+        left: 12%;
+    }
+    .box-wrapper .text-box h2 {
+        font-size: 1.5rem;
+    }
 }
