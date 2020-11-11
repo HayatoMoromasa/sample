@@ -29,6 +29,39 @@ body {
     flex-direction: column;
 }
 
+.box-wrapper .text-box {
+    width: 600px;
+    position: absolute;
+    top: 57%;
+    left: 33%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: perspective(1000px) rotateY(0deg);
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.box-wrapper .text-box h2 {
+    color: #fff;
+    font-size: 2.5rem;
+    -webkit-transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);
+}
+
+.box-wrapper .text-box a {
+    text-decoration: none;
+}
+
+.box-wrapper .text-box a h2 {
+    -webkit-transition: 0.8s ease;
+    -o-transition: 0.8s ease;
+    transition: 0.8s ease;
+}
+
+.box-wrapper .text-box a h2:hover {
+    color: rgb(196, 13, 252);
+}
+
 .circle-box {
     position: relative;
     width: 200px;
@@ -37,6 +70,15 @@ body {
     transform-style: preserve-3d;
     -webkit-animation: animate 20s linear infinite;
     animation: animate 20s linear infinite;
+    cursor: pointer;
+    -webkit-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
+}
+
+.circle-box:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
 }
 
 @-webkit-keyframes animate {
@@ -61,7 +103,7 @@ body {
     }
 }
 
-.circle-box span {
+.circle-box .circle-wrap {
     color: #fff;
     position: absolute;
     top: 0;
@@ -78,7 +120,7 @@ body {
     -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);
 }
 
-.circle-box span img {
+.circle-box .circle-wrap img {
     position: absolute;
     top: 0;
     left: 0;
@@ -86,23 +128,12 @@ body {
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
+    -webkit-transition: .8s ease;
+    -o-transition: .8s ease;
+    transition: .8s ease;
 }
 
-.box-wrapper .text-box {
-    width: 600px;
-    position: absolute;
-    bottom: 0;
-    left: -80%;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transform: perspective(1000px) rotateY(0deg);
-    transform: perspective(1000px) rotateY(0deg);
-}
-
-.box-wrapper .text-box h2 {
-    color: #fff;
-    font-size: 2.5rem;
-    -webkit-transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
-    transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
-    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);
+.circle-box .circle-wrap img:hover {
+    -webkit-filter: invert(1);
+    filter: invert(1);
 }
