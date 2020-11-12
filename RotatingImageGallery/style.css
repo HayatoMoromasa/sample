@@ -138,6 +138,13 @@ body {
     filter: invert(1);
 }
 
+@media screen and (max-width: 1024px) {
+    .box-wrapper .text-box {
+        top: 76%;
+        left: 24%;
+    }
+}
+
 @media screen and (max-width:480px) {
     .box-wrapper .text-box {
         width: 305px;
