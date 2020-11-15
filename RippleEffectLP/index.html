@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <title>RippleEffectLP</title>
+</head>
+<script src="pixi.min.js"></script>
+<body>
+
+    <div class="container">
+        <div class="nav">
+            <div class="search">
+                <ion-ion name="search"></ion-ion>
+            </div>
+            <div class="menu">
+                <ion-ion name="search"></ion-ion>
+            </div>
+        </div>
+        <div class="header">
+            <h1><span>Liquid</span>Theme</h1>
+        </div>
+        <div class="media">
+            <ul>
+                <li>facebook</li>
+                <li>instagram</li>
+                <li>twitter</li>
+            </ul>
+        </div>
+        <div class="logo">
+            <img src="./hyt1lifeLogoWhite.svg" alt="">
+        </div>
+        <div class="bottomnav">
+            <div class="counter">01</div>
+            <div class="bar"></div>
+            <ul>
+                <li><ion-icon name="arrow-down"></ion-icon></li>
+                <li><ion-icon name="arrow-up"></ion-icon></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script type="text/javascript">
+    var app = new PIXI.Application(window.innerWidth, window.innerHeight);
+    document.body.appendChild(app.view);
+
+    app.stage.interactive = true;
+    var posX, displacementSprite, displacementFilter, bg, vx;
+    var container = new PIXI.Container();
+    app.stage.addChild(container);
+
+    PIXI.loader.add("ripple.png").add("bg.jpg").load(setup);
+
+
+    function setup() {
+        posX = app.renderer.width / 2;
+        displacementSprite = new PIXI.Sprite(PIXI.loader.resources["ripple.png"].texture);
+        displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
+        displacementSprite.anchor.set(0.5);
+        displacementSprite.x = app.renderer.width / 2;
+        displacementSprite.y = app.renderer.height / 2;
+        vx = displacementSprite.x;
+
+        app.stage.addChild(displacementSprite);
+        container.filters = [displacementFilter];
+        displacementFilter.scale.x = 0;
+        displacementFilter.scale.y = 0;
+        bg = new PIXI.Sprite(PIXI.loader.resources["bg.jpg"].texture);
+        bg.width = app.renderer.width;
+        bg.height = app.renderer.height;
+        container.addChild(bg);
+        app.stage.on('mousemove', onPointerMove).on('touchMove', onPointerMove);
+        loop();
+    }
+
+    function onPointerMove(eventData) {
+        posX = eventData.data.global.x;
+    }
+
+    function loop() {
+        requestAnimationFrame(loop);
+        vx += (posX - displacementSprite.x) * 0.045;
+        displacementSprite.x = vx;
+        var disp = Math.floor(posX - displacementSprite.x);
+        if (disp < 0) disp = -disp;
+        var fs = map(disp, 0, 500, 0, 120);
+        disp = map(disp, 0, 500, 0.1, 0.6);
+        displacementSprite.scale.x = disp;
+        displacementFilter.scale.x = fs;
+    }
+    map = function(n, start1, stop1, start2, stop2) {
+        var newval = (n - start1) / (stop1 - start1) * (stop2 - start2) + start2;
+        return newval;
+    };
+
+    TweenMax.from(".brand", 2, {
+        y:20,
+        opacity: 0,
+        ease: Expo.easeInOut
+    });
+    TweenMax.from(".search", 2, {
+        delay: 0.1,
+        y: 20,
+        opacity: 0,
+        ease: Expo.easeInOut
+    });
+    TweenMax.from(".menu", 2, {
+        delay: 0.2,
+        y: 20,
+        opacity: 0,
+        ease: Expo.easeInOut
+    });
+    TweenMax.from(".header h1", 4, {
+        delay: 4,
+        y: 20,
+        opacity: 0,
+        ease: Expo.easeInOut
+    });
+    TweenMax.staggerFrom(".media ul li", 2, {
+        delay: 0.4,
+        opacity: 0,
+        x: 40,
+        ease: Expo.easeInOut
+    },0.2);
+    TweenMax.from(".bottomnav", 3, {
+        delay: 2,
+        y: 50,
+        ease: Expo.easeInOut
+    });
+    TweenMax.from(".counter", 2, {
+        delay: 3,
+        y: 40,
+        opacity: 0,
+        ease: Expo.easeInOut
+    });
+    TweenMax.from(".bar", 2, {
+        delay: 3.6,
+        width: "0%",
+        ease: Expo.easeInOut
+    });
+    TweenMax.staggerFrom(".bottomnav ul li", 2, {
+        delay: 3.2,
+        opacity: 0,
+        y: 40,
+        ease: Expo.easeInOut
+    },0.2);
+
+    TweenMax.from(".logo", 2, {
+        delay: 1.4,
+        opacity: 0,
+        y:40,
+        ease: Expo.easeInOut
+    });
+    </script>
+</body>
+</html>
