@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>jsMouseMove3dParallax</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="imgBx">
+                <img src="./ramen.JPG" alt="">
+            </div>
+            <div class="contentBx">
+                <h2>kirinji</h2>
+                <p>mecha umaiyooo</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img src="./ramen2.JPG" alt="">
+            </div>
+            <div class="contentBx">
+                <h2>menya yu</h2>
+                <p>mecha umaiyooo</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img src="./ramen3.JPG" alt="">
+            </div>
+            <div class="contentBx">
+                <h2>menni hikariwo</h2>
+                <p>mecha umaiyooo</p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelectorAll(".box"), {
+            max: 25,
+            speed: 400
+        });
+    </script>
+</body>
+</html>
