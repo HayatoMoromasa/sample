@@ -1,0 +1,46 @@
+body {
+    background-image: url(./bg.jpg);
+    background-size: cover;
+}
+
+.item {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    background: transparent;
+    border: 1px solid gray;
+}
+
+.resizer {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.resizer.nw {
+    top: -5px;
+    left: -5px;
+    cursor: nw-resize;
+}
+
+.resizer.ne {
+    top: -5px;
+    right: -5px;
+    cursor: ne-resize;
+}
+
+.resizer.sw {
+    bottom: -5px;
+    left: -5px;
+    cursor: sw-resize;
+}
+
+.resizer.se {
+    bottom: -5px;
+    right: -5px;
+    cursor: se-resize;
+}
