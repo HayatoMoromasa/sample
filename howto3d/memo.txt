@@ -1,0 +1,20 @@
+
+transform-style: preserve-3d;を設定することによって、こちらの子要素を3d化することができる
+preserve-3dを設定した時点で設定した子要素や孫要素は(buttonのhtmlエレメント)3d空間に配置されていることになる
+3d空間にあるということはz軸が追加されていることになるので、要素の重なり順は同じ平面に上にない限りはz-indexが無視される
+3dでz-indexを考慮するにはtranslateZでどちらが前方かを定義する必要がある。
+z-indexは基本的に2d空間で、3d空間にした場合、z-indexは同じ平面に来たときにしか機能しないので、translateZを使うかtranslate3d(0,0,20px)などをつかう　
+
+perspective: 300px;という値も必要、これは奥行きを示すプロパティ
+値が小さければ寄る
+
+perspective-origin: 50% 50%;デフォルト値、視点を置く値でこれは3dの被写体に対し、真正面から見る形になる。
+-50% 50%にすると左側面から見る形になる
+第一引数がx軸、第2引数がy軸方向になる
+perspective-origin: top left;とすると左上を支点とする
+このようにperspectiveとperspective-originを使うことで3dに遠近感をもたせることができる
+
+
+3dのアニメーションになるので奥行きを設定することにより遠近感をもたせれる
+3dを表現するには最低限この2つが必要になる。
+transform-origin: top center;で回転軸を変更できる
