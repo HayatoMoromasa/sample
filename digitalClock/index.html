@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>digitalClock</title>
+</head>
+<body>
+    <div id="clock">
+        <h2>The time is now</h2>
+        <div id="time">
+            <div><span id="hour">00</span><span>Hours</span></div>
+            <div><span id="minutes">00</span><span>Minutes</span></div>
+            <div><span id="seconds">00</span><span>Seconds</span></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function clock(){
+            const hours = document.getElementById('hour');
+            const minutes = document.getElementById('minutes');
+            const seconds = document.getElementById('seconds');
+
+            const h = new Date().getHours();
+            const m = new Date().getMinutes();
+            const s = new Date().getSeconds();
+
+            hours.innerHTML = h;
+            minutes.innerHTML = m;
+            seconds.innerHTML = s;
+        }
+        const interval = setInterval(clock, 1000);
+    </script>
+</body>
+</html>
