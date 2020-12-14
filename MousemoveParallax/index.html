@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MousemoveParallax</title>
+</head>
+<body>
+    <section>
+        <div id="bg"></div>
+        <h2>2.5D Parallax Effects</h2>
+        <img src="img.png" class="girl" alt="">
+    </section>
+    <script type="text/javascript">
+        const position = document.documentElement;
+        position.addEventListener('mousemove', e => {
+            position.style.setProperty('--x', e.clientX + 'px');
+        })
+    </script>
+</body>
+</html>
