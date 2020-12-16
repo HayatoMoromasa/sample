@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>accordion</title>
+</head>
+<body>
+    <div class="accordion">
+        <div class="contentBx">
+            <div class="label">List 1</div>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nihil repellat corporis fuga, beatae ea ratione odit nostrum aspernatur alias blanditiis nobis! Officiis odit esse rem ipsum aliquid maxime placeat?</p>
+            </div>
+        </div>
+        <div class="contentBx">
+            <div class="label">List 2</div>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nihil repellat corporis fuga, beatae ea ratione odit nostrum aspernatur alias blanditiis nobis! Officiis odit esse rem ipsum aliquid maxime placeat?</p>
+            </div>
+        </div>
+        <div class="contentBx">
+            <div class="label">List 3</div>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nihil repellat corporis fuga, beatae ea ratione odit nostrum aspernatur alias blanditiis nobis! Officiis odit esse rem ipsum aliquid maxime placeat?</p>
+            </div>
+        </div>
+        <div class="contentBx">
+            <div class="label">List 4</div>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nihil repellat corporis fuga, beatae ea ratione odit nostrum aspernatur alias blanditiis nobis! Officiis odit esse rem ipsum aliquid maxime placeat?</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const accordion = document.getElementsByClassName('contentBx');
+        for (i = 0; i<accordion.length; i++){
+            accordion[i].addEventListener('click', function(){
+                this.classList.toggle('active')
+            })
+        }
+    </script>
+</body>
+</html>
