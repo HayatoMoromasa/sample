@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>playVideoOnScroll</title>
+</head>
+<body>
+    <div class="banner">
+        <video paused muted id="video">
+            <source src="./bg.mp4" type="video/mp4">
+            </video>
+            <h1>Play Video On Scroll</h1>
+    </div>
+    <script>
+        let video = document.getElementById('video');
+        setInterval(function(){
+            video.currentTime = window.pageYOffset/1000;
+        },100);
+    </script>
+</body>
+</html>
