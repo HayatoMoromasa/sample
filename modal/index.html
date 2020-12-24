@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>modal</title>
+</head>
+<body>
+    <div class="container" id="blur">
+        <div class="content">
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ex, quos aliquid sapiente soluta dolorum odit corporis est voluptates quibusdam vero consectetur pariatur iure saepe sunt deleniti exercitationem possimus cupiditate?</h2>
+            <img src="./img.jpg" alt="">
+            <a href="#" onclick="toggle()">Read More</a>
+        </div>
+    </div>
+    <div id="popup">
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptatibus, est excepturi culpa quia vitae asperiores rerum, vero mollitia perferendis maxime quos! Error, reiciendis magni iste expedita sapiente at animi!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe beatae ipsa in quo officiis natus a est accusamus maxime ea, voluptatem odit, voluptate mollitia hic alias enim velit facilis eum.</p>
+        <a href="#" onclick="toggle()">Close</a>
+    </div>
+    <script type="text/javascript">
+        function toggle(){
+            const blur = document.getElementById('blur');
+            blur.classList.toggle('active');
+            const popup = document.getElementById('popup');
+            popup.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
