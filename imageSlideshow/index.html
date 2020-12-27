@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>imageSlideshow</title>
+</head>
+<body>
+    <section>
+        <img src="drink.jpg" id="slider">
+        <ul class="navigation">
+            <li onclick="imgSlider('thumb1.jpg')"><img src="thumb1.jpg"></li>
+            <li onclick="imgSlider('thumb2.jpg')"><img src="thumb2.jpg"></li>
+            <li onclick="imgSlider('thumb3.jpg')"><img src="thumb3.jpg"></li>
+            <li onclick="imgSlider('thumb4.jpg')"><img src="thumb4.jpg"></li>
+        </ul>
+        <h2>simple image slider</h2>
+    </section>
+
+    <script type="text/javascript">
+        function imgSlider(e){
+            document.getElementById('slider').src = e;
+        }
+    </script>
+</body>
+</html>
