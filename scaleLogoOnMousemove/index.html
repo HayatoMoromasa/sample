@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>scale Logo On Mousemove</title>
+</head>
+<body>
+    <div class="logo"><img src="./hyt1lifeLogoWhite.svg" alt=""></div>
+</body>
+    <script type="text/javascript">
+    document.onmousemove = function(e){
+        document.querySelector(".logo").style.transform = "scale("+e.clientX*0.001+")";
+    }
+    </script>
+</html>
