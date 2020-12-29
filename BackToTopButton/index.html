@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BackToTopButton</title>
+</head>
+<body>
+    <div class="scrollTop" onclick="scrollToTop()"></div>
+    <div class="container">
+        <h2>Animated Scroll to top button using Vanilla Javascript</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptas nisi est. Non eveniet tempore fuga quas rem, quos quidem cum alias magni quae, esse id facere doloribus, corporis quaerat?</p>
+    </div>
+    <script type="text/javascript">
+        window.addEventListener('scroll', ()=> {
+            const scroll = document.querySelector('.scrollTop');
+            scroll.classList.toggle('active', window.scrollY > 500)
+        });
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }
+    </script>
+</body>
+</html>
