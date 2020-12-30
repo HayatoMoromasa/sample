@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>boxShadowEffects</title>
+</head>
+<body>
+    <div class="box-item">
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <script type="text/javascript">
+        let box = document.querySelectorAll('.box');
+        let shadow = '';
+        for(let i = 0; i < box.length; i++) {
+            box[i].addEventListener('mouseover', () => {
+                for (let i = 0; i < 800; i++) {
+                    shadow += (shadow? ',':'')+ i*1+'px ' + i*1+'px 0 #e8305b';
+                }
+                box[i].style.boxShadow = shadow;
+                box[i].style.transition = '0.3s ease-in-out';
+            },false);
+        };
+    </script>
+</body>
+</html>
