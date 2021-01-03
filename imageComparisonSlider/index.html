@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>imageComparisonSlider</title>
+</head>
+<body>
+    <section>
+        <div id="layer"></div>
+    </section>
+    <script type="text/javascript">
+        const slide = document.getElementById('layer');
+        window.onmousemove = function(e) {
+            const x = e.clientX;
+            slide.style.left = x + 'px';
+        }
+    </script>
+</body>
+</html>
