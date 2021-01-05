@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MovingBackgroundImageOnMousemove</title>
+</head>
+<body>
+    <div class="bg"></div>
+    <script type="text/javascript">
+        const el = document.querySelector('.bg');
+        el.addEventListener("mousemove", (e) => {
+            el.style.backgroundPositionX = -e.offsetX + "px";
+            el.style.backgroundPositionY = -e.offsetY + "px";
+        });
+    </script>
+</body>
+</html>
