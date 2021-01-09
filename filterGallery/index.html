@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>filterGallery</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Filter foods image Gallery Using Css Js</h2>
+        <ul class="filter-menu">
+            <li data-target="all">All</li>
+            <li data-target="ramen">Ramen</li>
+            <li data-target="curry">Curry</li>
+            <li data-target="other">Other</li>
+        </ul>
+        <ul class="filter-item">
+            <li data-item="other"><img src="./other02.jpg" alt=""></li>
+            <li data-item="ramen"><img src="./ramen03.jpg" alt=""></li>
+            <li data-item="curry"><img src="./curry01.jpg" alt=""></li>
+            <li data-item="curry"><img src="./curry02.jpg" alt=""></li>
+            <li data-item="ramen"><img src="./ramen01.jpg" alt=""></li>
+            <li data-item="other"><img src="./other01.jpg" alt=""></li>
+            <li data-item="other"><img src="./other03.jpg" alt=""></li>
+            <li data-item="ramen"><img src="./ramen02.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        let sortBtn = document.querySelector('.filter-menu').children;
+        let sortItem = document.querySelector('.filter-item').children;
+        for(let i = 0; i < sortBtn.length; i++) {
+            sortBtn[i].addEventListener('click', function() {
+                for(let j = 0; j < sortBtn.length; j++){
+                    sortBtn[j].classList.remove('current');
+                }
+                this.classList.add('current');
+
+                let targetData = this.getAttribute('data-target');
+
+                for(let k = 0; k < sortItem.length; k++) {
+                    sortItem[k].classList.remove('active');
+                    sortItem[k].classList.add('delete');
+
+                    if(sortItem[k].getAttribute('data-item') === targetData || targetData === "all"){
+                        sortItem[k].classList.remove('delete');
+                        sortItem[k].classList.add('active');
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background: #000;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 120%;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.filter-menu {
+    margin-bottom: 20px;
+}
+
+.filter-menu li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 15px;
+    background: #eb4d4b;
+    color: #fff;
+}
+
+.filter-item li.active {
+    width: 46.777%;
+    margin: 2px;
+    transition: all 0.3s ease;
+}
+
+.filter-item li.delete {
+    width: 0%;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.filter-menu li:hover, .filter-menu li.current {
+    background: #ff7979;
+}
+
+.filter-item {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter-item li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46.777%;
+    overflow: hidden;
+    height: 410px;
+    margin: 2px;
+}
+
+.filter-item img {
+    object-fit: cover;
+    display: block;
+    width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+    .filter-item li.active, .filter-item li {
+        width: 46.777%;
+        height: 100px;
+    }
+    h2 {
+        font-size: 190%;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .filter-item li.active, .filter-item li {
+        height: 160px;
+    }
+}
+
+@media screen and (min-width: 896px) {
+    .filter-item li.active, .filter-item li {
+        width: 32%;
+        height: 175px;
+    }
+    h2 {
+        font-size: 190%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .filter-item li.active, .filter-item li {
+        width: 24%;
+        height: 180px;
+    }
+    h2 {
+        font-size: 270%;
+    }
+}
