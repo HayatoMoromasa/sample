@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>distortContentOnScroll</title>
+</head>
+<body>
+    <div class="content">
+        <section class="distort">
+            <div>
+                <img src="./img01.jpg" alt="">
+                <h1>Title</h1>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum minima animi error aspernatur libero magni earum odit expedita a, excepturi maxime veniam porro nihil, inventore repellat tempora nisi, ex eaque?
+                </p>
+            </div>
+            <div>
+                <img src="./img02.jpg" alt="">
+                <h1>Title</h1>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum minima animi error aspernatur libero magni earum odit expedita a, excepturi maxime veniam porro nihil, inventore repellat tempora nisi, ex eaque?
+                </p>
+            </div>
+            <div>
+                <img src="./img03.jpg" alt="">
+                <h1>Title</h1>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum minima animi error aspernatur libero magni earum odit expedita a, excepturi maxime veniam porro nihil, inventore repellat tempora nisi, ex eaque?
+                </p>
+            </div>
+        </section>
+    </div>
+    <script type="text/javascript">
+        const content = document.querySelector("section");
+        let currentPos = window.pageYOffset;
+
+        const callDistort = function() {
+            const newPos = window.pageYOffset;
+            const diff = newPos - currentPos;
+            const speed = diff * 0.35;
+
+            content.style.transform = `skewY(${speed}deg)`;
+            currentPos = newPos;
+            requestAnimationFrame(callDistort);
+        };
+        callDistort();
+    </script>
+</body>
+</html>
