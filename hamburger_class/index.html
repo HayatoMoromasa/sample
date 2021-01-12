@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>hamburger_class</title>
+</head>
+<body>
+    <div class="container">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="menu">
+        <ul class="menu-list">
+            <li>service</li>
+            <li>about</li>
+            <li>contact</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        class HamburgerMenu {
+            constructor() {
+                this.DOM = {};
+                this.DOM.btn = document.querySelector('.hamburger');
+                this.DOM.container = document.querySelector('.container');
+                this.eventType = this._getEventType();
+                this._addEvent();
+            }
+            _getEventType(){
+                return window.ontouchstart ? 'touchstart' : 'click';
+            }
+            _toggle() {
+                this.DOM.container.classList.toggle('active');
+            }
+            _addEvent() {
+                this.DOM.btn.addEventListener(this.eventType, this._toggle.bind(this));
+            }
+        }
+        new HamburgerMenu();
+    </script>
+</body>
+</html>
