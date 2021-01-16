@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>sortHTMLTable</title>
+</head>
+<body>
+    <div class="container">
+        <table id="myTable" class="table">
+
+            <thead>
+                <tr><th>Countries</th><th>Name</th><th>Age</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Japan</td><td>Taro</td><td>20</td></tr>
+                <tr><td>Korea</td><td>Kim</td><td>22</td></tr>
+                <tr><td>France</td><td>Sarah</td><td>25</td></tr>
+                <tr><td>Russia</td><td>Alexandre</td><td>29</td></tr>
+            </tbody>
+        </table>
+
+    </div>
+    <script type="text/javascript">
+
+        th = document.getElementsByTagName('th');
+        for (let c=0; c < th.length; c++) {
+            th[c].addEventListener('click',item(c))
+        }
+
+        function item(c) {
+            return function() {
+                sortTable(c)
+            }
+        }
+
+        function sortTable(c) {
+            let table, rows, switching, i, x, y, shouldSwitch;
+            table = document.getElementById("myTable");
+            switching = true;
+
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+
+                    x = rows[i].getElementsByTagName("TD")[c];
+                    y = rows[i + 1].getElementsByTagName("TD")[c];
+
+                    if(x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()){
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
