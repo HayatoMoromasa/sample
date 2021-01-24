@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>revealElementsOnPageScrollUsingGSAP</title>
+</head>
+<body>
+    <section>
+        <div>
+            <h2 class="reveal">Content Reveal on Page Scroll</h2>
+            <h2 class="reveal">ScrollTrigger is Awesome</h2>
+            <img src="./sora.jpg" alt="">
+        </div>
+    </section>
+    <section>
+        <div>
+            <h2 class="reveal">Content Reveal on Page Scroll</h2>
+            <h2 class="reveal">ScrollTrigger is Awesome</h2>
+            <img src="./img1.jpg" alt="">
+        </div>
+    </section>
+    <section>
+        <div>
+            <h2 class="reveal">Content Reveal on Page Scroll</h2>
+            <h2 class="reveal">ScrollTrigger is Awesome</h2>
+            <img src="./img2.jpg" alt="">
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+    <script type="text/javascript">
+        const reveal = gsap.utils.toArray('.reveal');
+        reveal.forEach((text, i) => {
+            ScrollTrigger.create({
+                trigger: text,
+                toggleClass: 'active',
+                start: "top 85%",
+                end: "top 15%",
+                // markers: true
+            })
+        });
+        const imgs = gsap.utils.toArray('img');
+        imgs.forEach((text, i) => {
+            ScrollTrigger.create({
+                trigger: text,
+                toggleClass: 'active',
+                start: "top 85%",
+                end: "top 15%",
+            })
+        });
+    </script>
+</body>
+</html>
